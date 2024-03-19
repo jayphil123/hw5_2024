@@ -1,0 +1,142 @@
+
+@keyframes growLogo {
+    0% {
+        width: 25px;
+        opacity: 0;
+    }
+    100% {
+        width: 475px;
+        opacity: 1;
+    }
+}
+
+#logo {
+    animation: growLogo 5s ease-in-out forwards;
+}
+
+body {
+    font-family: 'Poppins', serif;
+    background-color: #f1f1f1;
+    background-image: url('images/concrete_seamless.png');
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav_links {
+    align-items: center;
+}
+
+.nav_links a {
+    float: right;
+    color: #50C7C7;
+    text-decoration: underline;
+}
+
+.card > header {
+    background: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0;
+    border-radius: 50px 50px 0 0;
+}
+
+.card {
+    flex: 0 0 250px;
+    margin: 10px;
+}
+
+.pricing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 300px;
+    border: 10px solid #50C7C7;
+    margin: 10px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (min-width: 900px) {
+    header:not(.pricing header):first-of-type {
+        z-index: 999;
+        position: fixed;
+        width: 100%;
+    }
+
+    main {
+        padding-top: 150px;
+    }
+
+    .nav_links {
+        float: right;
+        display: flex;
+        margin-right: 20px;
+    }
+
+    .pricing {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .card {
+        flex: 0 0 275px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #logo {
+        animation: none;
+    }
+}
+
+@media print and (orientation: portrait) {
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: none;
+    }
+
+    nav {
+        display: flex;
+        text-align: center;
+    }
+
+    header img#logo {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .nav_links {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .pricing {
+        display: flex;
+        align-items: flex-end; /* Align elements along the bottom */
+    }
+
+    .card {
+        flex: 0 0 225px;
+        border: 2px solid #45ADDD;
+    }
+
+    .gallery {
+        display: none;
+    }
+
+    .card ul li:nth-child(2)::after {
+        content: '\1F44D';
+        color: yellow;
+    }
+}
